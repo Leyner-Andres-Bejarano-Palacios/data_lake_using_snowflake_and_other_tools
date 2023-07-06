@@ -1,0 +1,71 @@
+[2023-06-16T20:53:43.139+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: demo_dag.executor_task manual__2019-06-01T16:00:00+00:00 [queued]>
+[2023-06-16T20:53:43.154+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: demo_dag.executor_task manual__2019-06-01T16:00:00+00:00 [queued]>
+[2023-06-16T20:53:43.154+0000] {taskinstance.py:1308} INFO - Starting attempt 10 of 13
+[2023-06-16T20:53:43.195+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): executor_task> on 2019-06-01 16:00:00+00:00
+[2023-06-16T20:53:43.219+0000] {standard_task_runner.py:57} INFO - Started process 112 to run task
+[2023-06-16T20:53:43.222+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'demo_dag', 'executor_task', 'manual__2019-06-01T16:00:00+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/demo_dag.py', '--cfg-path', '/tmp/tmpzbldpxwz']
+[2023-06-16T20:53:43.225+0000] {standard_task_runner.py:85} INFO - Job 87: Subtask executor_task
+[2023-06-16T20:53:43.316+0000] {task_command.py:410} INFO - Running <TaskInstance: demo_dag.executor_task manual__2019-06-01T16:00:00+00:00 [running]> on host 03b5ffc5bbd5
+[2023-06-16T20:53:43.826+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:205: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-16T20:53:43.941+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='personaltraingcp@gmail.com' AIRFLOW_CTX_DAG_OWNER='Leyner_Bejarano' AIRFLOW_CTX_DAG_ID='demo_dag' AIRFLOW_CTX_TASK_ID='executor_task' AIRFLOW_CTX_EXECUTION_DATE='2019-06-01T16:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='10' AIRFLOW_CTX_DAG_RUN_ID='manual__2019-06-01T16:00:00+00:00'
+[2023-06-16T20:53:44.300+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-16T20:53:44.300+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', ' \n        cd /opt/***/dags/scripts &&\n        pip install -r requirements.txt &&\n        python lambdaExecutor.py -dt 2019-06-01 -dh 16 -q https://sqs.us-east-2.amazonaws.com/147929168898/lokaInterviewSQS -ak AKIASE4KD7QBGVHE4G7U -sk AKIASE4KD7QBGVHE4G7U &&\n        pip freeze\n        ']
+[2023-06-16T20:53:44.364+0000] {subprocess.py:86} INFO - Output:
+[2023-06-16T20:53:52.505+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-06-16T20:54:06.321+0000] {subprocess.py:93} INFO - Collecting boto3==1.26.151 (from -r requirements.txt (line 1))
+[2023-06-16T20:54:06.798+0000] {subprocess.py:93} INFO -   Downloading boto3-1.26.151-py3-none-any.whl (135 kB)
+[2023-06-16T20:54:07.238+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.6/135.6 kB 292.0 kB/s eta 0:00:00
+[2023-06-16T20:54:09.118+0000] {subprocess.py:93} INFO - Collecting botocore==1.29.151 (from -r requirements.txt (line 2))
+[2023-06-16T20:54:09.152+0000] {subprocess.py:93} INFO -   Downloading botocore-1.29.151-py3-none-any.whl (10.9 MB)
+[2023-06-16T20:54:11.192+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.9/10.9 MB 5.3 MB/s eta 0:00:00
+[2023-06-16T20:54:12.002+0000] {subprocess.py:93} INFO - Collecting fastavro==1.7.4 (from -r requirements.txt (line 3))
+[2023-06-16T20:54:12.034+0000] {subprocess.py:93} INFO -   Downloading fastavro-1.7.4-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.4 MB)
+[2023-06-16T20:54:13.158+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 2.2 MB/s eta 0:00:00
+[2023-06-16T20:54:13.184+0000] {subprocess.py:93} INFO - Requirement already satisfied: pandas in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (1.3.5)
+[2023-06-16T20:54:13.186+0000] {subprocess.py:93} INFO - Requirement already satisfied: python-dateutil==2.8.2 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (2.8.2)
+[2023-06-16T20:54:13.187+0000] {subprocess.py:93} INFO - Requirement already satisfied: pytz==2023.3 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (2023.3)
+[2023-06-16T20:54:13.189+0000] {subprocess.py:93} INFO - Requirement already satisfied: s3transfer==0.6.1 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (0.6.1)
+[2023-06-16T20:54:13.190+0000] {subprocess.py:93} INFO - Requirement already satisfied: six==1.16.0 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (1.16.0)
+[2023-06-16T20:54:13.541+0000] {subprocess.py:93} INFO - Collecting tzdata==2023.3 (from -r requirements.txt (line 9))
+[2023-06-16T20:54:13.574+0000] {subprocess.py:93} INFO -   Downloading tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+[2023-06-16T20:54:13.854+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 341.8/341.8 kB 1.2 MB/s eta 0:00:00
+[2023-06-16T20:54:14.206+0000] {subprocess.py:93} INFO - Collecting urllib3==1.26.16 (from -r requirements.txt (line 10))
+[2023-06-16T20:54:14.236+0000] {subprocess.py:93} INFO -   Downloading urllib3-1.26.16-py2.py3-none-any.whl (143 kB)
+[2023-06-16T20:54:14.466+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 143.1/143.1 kB 611.4 kB/s eta 0:00:00
+[2023-06-16T20:54:14.678+0000] {subprocess.py:93} INFO - Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in /home/***/.local/lib/python3.7/site-packages (from boto3==1.26.151->-r requirements.txt (line 1)) (0.10.0)
+[2023-06-16T20:54:15.368+0000] {subprocess.py:93} INFO - Requirement already satisfied: numpy>=1.17.3 in /home/***/.local/lib/python3.7/site-packages (from pandas->-r requirements.txt (line 4)) (1.21.6)
+[2023-06-16T20:54:36.933+0000] {subprocess.py:93} INFO - Installing collected packages: urllib3, tzdata, fastavro, botocore, boto3
+[2023-06-16T20:54:36.934+0000] {subprocess.py:93} INFO -   Attempting uninstall: urllib3
+[2023-06-16T20:54:36.943+0000] {subprocess.py:93} INFO -     Found existing installation: urllib3 1.26.15
+[2023-06-16T20:54:37.243+0000] {subprocess.py:93} INFO -     Uninstalling urllib3-1.26.15:
+[2023-06-16T20:54:38.806+0000] {subprocess.py:93} INFO -       Successfully uninstalled urllib3-1.26.15
+[2023-06-16T20:54:46.006+0000] {subprocess.py:93} INFO -   Attempting uninstall: botocore
+[2023-06-16T20:54:46.013+0000] {subprocess.py:93} INFO -     Found existing installation: botocore 1.29.76
+[2023-06-16T20:54:55.744+0000] {subprocess.py:93} INFO -     Uninstalling botocore-1.29.76:
+[2023-06-16T20:56:18.144+0000] {subprocess.py:93} INFO -       Successfully uninstalled botocore-1.29.76
+[2023-06-16T20:56:20.756+0000] {subprocess.py:93} INFO -   Attempting uninstall: boto3
+[2023-06-16T20:56:20.758+0000] {subprocess.py:93} INFO -     Found existing installation: boto3 1.26.76
+[2023-06-16T20:56:20.864+0000] {subprocess.py:93} INFO -     Uninstalling boto3-1.26.76:
+[2023-06-16T20:56:21.003+0000] {subprocess.py:93} INFO -       Successfully uninstalled boto3-1.26.76
+[2023-06-16T20:56:21.289+0000] {subprocess.py:93} INFO - ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+[2023-06-16T20:56:21.290+0000] {subprocess.py:93} INFO - aiobotocore 2.5.0 requires botocore<1.29.77,>=1.29.76, but you have botocore 1.29.151 which is incompatible.
+[2023-06-16T20:56:21.290+0000] {subprocess.py:93} INFO - Successfully installed boto3-1.26.151 botocore-1.29.151 fastavro-1.7.4 tzdata-2023.3 urllib3-1.26.16
+[2023-06-16T20:56:28.012+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-06-16T20:56:28.013+0000] {subprocess.py:93} INFO -   File "lambdaExecutor.py", line 25, in <module>
+[2023-06-16T20:56:28.013+0000] {subprocess.py:93} INFO -     vArgs = ArgParser.fn_get_args()
+[2023-06-16T20:56:28.013+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/scripts/lambdaExecutorUT.py", line 24, in fn_get_args
+[2023-06-16T20:56:28.013+0000] {subprocess.py:93} INFO -     parser.add_argument('--queue-url', '-q', help = cls.QUEUE_URL, \
+[2023-06-16T20:56:28.013+0000] {subprocess.py:93} INFO - AttributeError: type object 'ArgParser' has no attribute 'QUEUE_URL'
+[2023-06-16T20:56:28.087+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-06-16T20:56:28.143+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 211, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-06-16T20:56:28.493+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=demo_dag, task_id=executor_task, execution_date=20190601T160000, start_date=20230616T205343, end_date=20230616T205628
+[2023-06-16T20:56:29.075+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 87 for task executor_task (Bash command failed. The command returned a non-zero exit code 1.; 112)
+[2023-06-16T20:56:29.086+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-16T20:56:29.121+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

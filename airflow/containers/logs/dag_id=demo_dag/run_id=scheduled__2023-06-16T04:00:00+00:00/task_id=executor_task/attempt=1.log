@@ -1,0 +1,41 @@
+[2023-06-16T05:02:32.704+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: demo_dag.executor_task scheduled__2023-06-16T04:00:00+00:00 [queued]>
+[2023-06-16T05:02:32.829+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: demo_dag.executor_task scheduled__2023-06-16T04:00:00+00:00 [queued]>
+[2023-06-16T05:02:32.829+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 4
+[2023-06-16T05:02:32.870+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): executor_task> on 2023-06-16 04:00:00+00:00
+[2023-06-16T05:02:32.878+0000] {standard_task_runner.py:57} INFO - Started process 6093 to run task
+[2023-06-16T05:02:32.881+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'demo_dag', 'executor_task', 'scheduled__2023-06-16T04:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/demo_dag.py', '--cfg-path', '/tmp/tmpjcni_zuh']
+[2023-06-16T05:02:32.883+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask executor_task
+[2023-06-16T05:02:32.960+0000] {task_command.py:410} INFO - Running <TaskInstance: demo_dag.executor_task scheduled__2023-06-16T04:00:00+00:00 [running]> on host c01f9dbc1aeb
+[2023-06-16T05:02:33.220+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:205: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-16T05:02:33.540+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='personaltraingcp@gmail.com' AIRFLOW_CTX_DAG_OWNER='Leyner_Bejarano' AIRFLOW_CTX_DAG_ID='demo_dag' AIRFLOW_CTX_TASK_ID='executor_task' AIRFLOW_CTX_EXECUTION_DATE='2023-06-16T04:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-06-16T04:00:00+00:00'
+[2023-06-16T05:02:33.772+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-16T05:02:33.813+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', ' \n        cd /opt/***/dags &&\n        pip install -r requirements.txt &&\n        python lambdaExecutor.py -dt 2023-06-16 -dh 04 -q https://sqs.us-east-2.amazonaws.com/147929168898/lokaInterviewSQS\n        ']
+[2023-06-16T05:02:33.858+0000] {subprocess.py:86} INFO - Output:
+[2023-06-16T05:02:40.252+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-06-16T05:02:49.760+0000] {subprocess.py:93} INFO - Collecting boto3==1.26.151 (from -r requirements.txt (line 1))
+[2023-06-16T05:02:50.089+0000] {subprocess.py:93} INFO -   Downloading boto3-1.26.151-py3-none-any.whl (135 kB)
+[2023-06-16T05:02:50.174+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.6/135.6 kB 1.6 MB/s eta 0:00:00
+[2023-06-16T05:02:52.536+0000] {subprocess.py:93} INFO - Collecting botocore==1.29.151 (from -r requirements.txt (line 2))
+[2023-06-16T05:02:52.571+0000] {subprocess.py:93} INFO -   Downloading botocore-1.29.151-py3-none-any.whl (10.9 MB)
+[2023-06-16T05:02:54.611+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.9/10.9 MB 5.4 MB/s eta 0:00:00
+[2023-06-16T05:02:55.670+0000] {subprocess.py:93} INFO - Collecting fastavro==1.7.4 (from -r requirements.txt (line 3))
+[2023-06-16T05:02:55.792+0000] {subprocess.py:93} INFO -   Downloading fastavro-1.7.4-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.4 MB)
+[2023-06-16T05:02:56.518+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 3.4 MB/s eta 0:00:00
+[2023-06-16T05:02:56.618+0000] {subprocess.py:93} INFO - Collecting jmespath==1.0.1 (from -r requirements.txt (line 4))
+[2023-06-16T05:02:56.648+0000] {subprocess.py:93} INFO -   Downloading jmespath-1.0.1-py3-none-any.whl (20 kB)
+[2023-06-16T05:02:57.518+0000] {subprocess.py:93} INFO - ERROR: Ignored the following versions that require a different python version: 1.22.0 Requires-Python >=3.8; 1.22.1 Requires-Python >=3.8; 1.22.2 Requires-Python >=3.8; 1.22.3 Requires-Python >=3.8; 1.22.4 Requires-Python >=3.8; 1.23.0 Requires-Python >=3.8; 1.23.0rc1 Requires-Python >=3.8; 1.23.0rc2 Requires-Python >=3.8; 1.23.0rc3 Requires-Python >=3.8; 1.23.1 Requires-Python >=3.8; 1.23.2 Requires-Python >=3.8; 1.23.3 Requires-Python >=3.8; 1.23.4 Requires-Python >=3.8; 1.23.5 Requires-Python >=3.8; 1.24.0 Requires-Python >=3.8; 1.24.0rc1 Requires-Python >=3.8; 1.24.0rc2 Requires-Python >=3.8; 1.24.1 Requires-Python >=3.8; 1.24.2 Requires-Python >=3.8; 1.24.3 Requires-Python >=3.8; 1.25.0rc1 Requires-Python >=3.9
+[2023-06-16T05:02:57.518+0000] {subprocess.py:93} INFO - ERROR: Could not find a version that satisfies the requirement numpy==1.24.3 (from versions: 1.3.0, 1.4.1, 1.5.0, 1.5.1, 1.6.0, 1.6.1, 1.6.2, 1.7.0, 1.7.1, 1.7.2, 1.8.0, 1.8.1, 1.8.2, 1.9.0, 1.9.1, 1.9.2, 1.9.3, 1.10.0.post2, 1.10.1, 1.10.2, 1.10.4, 1.11.0, 1.11.1, 1.11.2, 1.11.3, 1.12.0, 1.12.1, 1.13.0, 1.13.1, 1.13.3, 1.14.0, 1.14.1, 1.14.2, 1.14.3, 1.14.4, 1.14.5, 1.14.6, 1.15.0, 1.15.1, 1.15.2, 1.15.3, 1.15.4, 1.16.0, 1.16.1, 1.16.2, 1.16.3, 1.16.4, 1.16.5, 1.16.6, 1.17.0, 1.17.1, 1.17.2, 1.17.3, 1.17.4, 1.17.5, 1.18.0, 1.18.1, 1.18.2, 1.18.3, 1.18.4, 1.18.5, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.20.0, 1.20.1, 1.20.2, 1.20.3, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6)
+[2023-06-16T05:02:57.519+0000] {subprocess.py:93} INFO - ERROR: No matching distribution found for numpy==1.24.3
+[2023-06-16T05:02:58.309+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-06-16T05:02:58.330+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 211, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-06-16T05:02:58.362+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=demo_dag, task_id=executor_task, execution_date=20230616T040000, start_date=20230616T050232, end_date=20230616T050258
+[2023-06-16T05:02:58.422+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 12 for task executor_task (Bash command failed. The command returned a non-zero exit code 1.; 6093)
+[2023-06-16T05:02:58.440+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-16T05:02:58.486+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

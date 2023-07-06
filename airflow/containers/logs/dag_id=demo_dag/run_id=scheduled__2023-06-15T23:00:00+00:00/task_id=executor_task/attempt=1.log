@@ -1,0 +1,24 @@
+[2023-06-16T00:00:03.693+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: demo_dag.executor_task scheduled__2023-06-15T23:00:00+00:00 [queued]>
+[2023-06-16T00:00:03.703+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: demo_dag.executor_task scheduled__2023-06-15T23:00:00+00:00 [queued]>
+[2023-06-16T00:00:03.703+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 4
+[2023-06-16T00:00:03.763+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): executor_task> on 2023-06-15 23:00:00+00:00
+[2023-06-16T00:00:03.769+0000] {standard_task_runner.py:57} INFO - Started process 3004 to run task
+[2023-06-16T00:00:03.772+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'demo_dag', 'executor_task', 'scheduled__2023-06-15T23:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/demo_dag.py', '--cfg-path', '/tmp/tmpgqq7qz5g']
+[2023-06-16T00:00:03.773+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask executor_task
+[2023-06-16T00:00:03.821+0000] {task_command.py:410} INFO - Running <TaskInstance: demo_dag.executor_task scheduled__2023-06-15T23:00:00+00:00 [running]> on host c01f9dbc1aeb
+[2023-06-16T00:00:04.044+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='personaltraingcp@gmail.com' AIRFLOW_CTX_DAG_OWNER='Leyner_Bejarano' AIRFLOW_CTX_DAG_ID='demo_dag' AIRFLOW_CTX_TASK_ID='executor_task' AIRFLOW_CTX_EXECUTION_DATE='2023-06-15T23:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-06-15T23:00:00+00:00'
+[2023-06-16T00:00:04.046+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-16T00:00:04.047+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        cd /opt/***/dags &&\n        echo $(pwd) &&\n        ls -ltr &&\n        python --version &&\n        python3 --version \n        ']
+[2023-06-16T00:00:04.065+0000] {subprocess.py:86} INFO - Output:
+[2023-06-16T00:00:04.071+0000] {subprocess.py:93} INFO - /opt/***/dags
+[2023-06-16T00:00:04.073+0000] {subprocess.py:93} INFO - total 8
+[2023-06-16T00:00:04.073+0000] {subprocess.py:93} INFO - -rw-rw-r-- 1 default 1001    0 Jun 15 23:58 random.txt
+[2023-06-16T00:00:04.073+0000] {subprocess.py:93} INFO - -rw-rw-r-- 1 default 1001 1186 Jun 15 23:58 demo_dag.py
+[2023-06-16T00:00:04.074+0000] {subprocess.py:93} INFO - drwxrwxr-x 2 default root 4096 Jun 15 23:58 __pycache__
+[2023-06-16T00:00:04.076+0000] {subprocess.py:93} INFO - Python 3.7.16
+[2023-06-16T00:00:04.078+0000] {subprocess.py:93} INFO - Python 3.7.16
+[2023-06-16T00:00:04.079+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-06-16T00:00:04.122+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=demo_dag, task_id=executor_task, execution_date=20230615T230000, start_date=20230616T000003, end_date=20230616T000004
+[2023-06-16T00:00:04.183+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-06-16T00:00:04.213+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

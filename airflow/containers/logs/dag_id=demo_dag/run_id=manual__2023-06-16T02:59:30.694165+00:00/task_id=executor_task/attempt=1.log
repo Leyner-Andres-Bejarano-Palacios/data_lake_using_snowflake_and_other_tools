@@ -1,0 +1,30 @@
+[2023-06-16T02:59:35.934+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: demo_dag.executor_task manual__2023-06-16T02:59:30.694165+00:00 [queued]>
+[2023-06-16T02:59:35.964+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: demo_dag.executor_task manual__2023-06-16T02:59:30.694165+00:00 [queued]>
+[2023-06-16T02:59:35.965+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 4
+[2023-06-16T02:59:36.057+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): executor_task> on 2023-06-16 02:59:30.694165+00:00
+[2023-06-16T02:59:36.071+0000] {standard_task_runner.py:57} INFO - Started process 4488 to run task
+[2023-06-16T02:59:36.078+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'demo_dag', 'executor_task', 'manual__2023-06-16T02:59:30.694165+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/demo_dag.py', '--cfg-path', '/tmp/tmpw2qoa86p']
+[2023-06-16T02:59:36.083+0000] {standard_task_runner.py:85} INFO - Job 9: Subtask executor_task
+[2023-06-16T02:59:36.196+0000] {task_command.py:410} INFO - Running <TaskInstance: demo_dag.executor_task manual__2023-06-16T02:59:30.694165+00:00 [running]> on host c01f9dbc1aeb
+[2023-06-16T02:59:36.375+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:205: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-16T02:59:36.519+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='personaltraingcp@gmail.com' AIRFLOW_CTX_DAG_OWNER='Leyner_Bejarano' AIRFLOW_CTX_DAG_ID='demo_dag' AIRFLOW_CTX_TASK_ID='executor_task' AIRFLOW_CTX_EXECUTION_DATE='2023-06-16T02:59:30.694165+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-06-16T02:59:30.694165+00:00'
+[2023-06-16T02:59:36.522+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-16T02:59:36.523+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        echo "if I have the deal I would not care" &&\n        echo "2023-06-16" &&\n        echo "02" && \n        cd /opt/***/dags &&\n        echo $(pwd) &&\n        ls -ltr &&\n        python --version &&\n        python3 --version \n        ']
+[2023-06-16T02:59:36.570+0000] {subprocess.py:86} INFO - Output:
+[2023-06-16T02:59:36.574+0000] {subprocess.py:93} INFO - if I have the deal I would not care
+[2023-06-16T02:59:36.574+0000] {subprocess.py:93} INFO - 2023-06-16
+[2023-06-16T02:59:36.575+0000] {subprocess.py:93} INFO - 02
+[2023-06-16T02:59:36.576+0000] {subprocess.py:93} INFO - /opt/***/dags
+[2023-06-16T02:59:36.622+0000] {subprocess.py:93} INFO - total 8
+[2023-06-16T02:59:36.623+0000] {subprocess.py:93} INFO - -rw-rw-r-- 1 default 1001    0 Jun 15 23:58 random.txt
+[2023-06-16T02:59:36.624+0000] {subprocess.py:93} INFO - -rw-rw-r-- 1 default 1001 1442 Jun 16 02:59 demo_dag.py
+[2023-06-16T02:59:36.624+0000] {subprocess.py:93} INFO - drwxrwxr-x 2 default root 4096 Jun 16 02:59 __pycache__
+[2023-06-16T02:59:36.629+0000] {subprocess.py:93} INFO - Python 3.7.16
+[2023-06-16T02:59:36.634+0000] {subprocess.py:93} INFO - Python 3.7.16
+[2023-06-16T02:59:36.636+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-06-16T02:59:36.731+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=demo_dag, task_id=executor_task, execution_date=20230616T025930, start_date=20230616T025935, end_date=20230616T025936
+[2023-06-16T02:59:36.813+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-06-16T02:59:36.870+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

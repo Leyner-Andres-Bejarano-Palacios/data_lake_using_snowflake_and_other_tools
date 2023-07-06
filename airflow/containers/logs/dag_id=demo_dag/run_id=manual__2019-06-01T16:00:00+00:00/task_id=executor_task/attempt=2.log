@@ -1,0 +1,36 @@
+[2023-06-16T05:08:59.812+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: demo_dag.executor_task manual__2019-06-01T16:00:00+00:00 [queued]>
+[2023-06-16T05:09:00.043+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: demo_dag.executor_task manual__2019-06-01T16:00:00+00:00 [queued]>
+[2023-06-16T05:09:00.044+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 5
+[2023-06-16T05:09:00.097+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): executor_task> on 2019-06-01 16:00:00+00:00
+[2023-06-16T05:09:00.108+0000] {standard_task_runner.py:57} INFO - Started process 6213 to run task
+[2023-06-16T05:09:00.115+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'demo_dag', 'executor_task', 'manual__2019-06-01T16:00:00+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/demo_dag.py', '--cfg-path', '/tmp/tmpn2hllb4d']
+[2023-06-16T05:09:00.119+0000] {standard_task_runner.py:85} INFO - Job 14: Subtask executor_task
+[2023-06-16T05:09:00.244+0000] {task_command.py:410} INFO - Running <TaskInstance: demo_dag.executor_task manual__2019-06-01T16:00:00+00:00 [running]> on host c01f9dbc1aeb
+[2023-06-16T05:09:00.376+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:205: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-16T05:09:00.494+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='personaltraingcp@gmail.com' AIRFLOW_CTX_DAG_OWNER='Leyner_Bejarano' AIRFLOW_CTX_DAG_ID='demo_dag' AIRFLOW_CTX_TASK_ID='executor_task' AIRFLOW_CTX_EXECUTION_DATE='2019-06-01T16:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2019-06-01T16:00:00+00:00'
+[2023-06-16T05:09:00.497+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-16T05:09:00.498+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', ' \n        cd /opt/***/dags &&\n        pip install -r requirements.txt &&\n        python lambdaExecutor.py -dt 2019-06-01 -dh 16 -q https://sqs.us-east-2.amazonaws.com/147929168898/lokaInterviewSQS\n        ']
+[2023-06-16T05:09:00.528+0000] {subprocess.py:86} INFO - Output:
+[2023-06-16T05:09:02.680+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-06-16T05:09:04.960+0000] {subprocess.py:93} INFO - Collecting boto3==1.26.151 (from -r requirements.txt (line 1))
+[2023-06-16T05:09:04.965+0000] {subprocess.py:93} INFO -   Using cached boto3-1.26.151-py3-none-any.whl (135 kB)
+[2023-06-16T05:09:06.883+0000] {subprocess.py:93} INFO - Collecting botocore==1.29.151 (from -r requirements.txt (line 2))
+[2023-06-16T05:09:07.705+0000] {subprocess.py:93} INFO -   Using cached botocore-1.29.151-py3-none-any.whl (10.9 MB)
+[2023-06-16T05:09:08.999+0000] {subprocess.py:93} INFO - Collecting fastavro==1.7.4 (from -r requirements.txt (line 3))
+[2023-06-16T05:09:09.099+0000] {subprocess.py:93} INFO -   Using cached fastavro-1.7.4-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.4 MB)
+[2023-06-16T05:09:10.107+0000] {subprocess.py:93} INFO - ERROR: Ignored the following versions that require a different python version: 1.4.0 Requires-Python >=3.8; 1.4.0rc0 Requires-Python >=3.8; 1.4.1 Requires-Python >=3.8; 1.4.2 Requires-Python >=3.8; 1.4.3 Requires-Python >=3.8; 1.4.4 Requires-Python >=3.8; 1.5.0 Requires-Python >=3.8; 1.5.0rc0 Requires-Python >=3.8; 1.5.1 Requires-Python >=3.8; 1.5.2 Requires-Python >=3.8; 1.5.3 Requires-Python >=3.8; 2.0.0 Requires-Python >=3.8; 2.0.0rc0 Requires-Python >=3.8; 2.0.0rc1 Requires-Python >=3.8; 2.0.1 Requires-Python >=3.8; 2.0.2 Requires-Python >=3.8
+[2023-06-16T05:09:10.108+0000] {subprocess.py:93} INFO - ERROR: Could not find a version that satisfies the requirement pandas==2.0.2 (from versions: 0.1, 0.2, 0.3.0, 0.4.0, 0.4.1, 0.4.2, 0.4.3, 0.5.0, 0.6.0, 0.6.1, 0.7.0, 0.7.1, 0.7.2, 0.7.3, 0.8.0, 0.8.1, 0.9.0, 0.9.1, 0.10.0, 0.10.1, 0.11.0, 0.12.0, 0.13.0, 0.13.1, 0.14.0, 0.14.1, 0.15.0, 0.15.1, 0.15.2, 0.16.0, 0.16.1, 0.16.2, 0.17.0, 0.17.1, 0.18.0, 0.18.1, 0.19.0, 0.19.1, 0.19.2, 0.20.0, 0.20.1, 0.20.2, 0.20.3, 0.21.0, 0.21.1, 0.22.0, 0.23.0, 0.23.1, 0.23.2, 0.23.3, 0.23.4, 0.24.0, 0.24.1, 0.24.2, 0.25.0, 0.25.1, 0.25.2, 0.25.3, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.1.0, 1.1.1, 1.1.2, 1.1.3, 1.1.4, 1.1.5, 1.2.0, 1.2.1, 1.2.2, 1.2.3, 1.2.4, 1.2.5, 1.3.0, 1.3.1, 1.3.2, 1.3.3, 1.3.4, 1.3.5)
+[2023-06-16T05:09:10.109+0000] {subprocess.py:93} INFO - ERROR: No matching distribution found for pandas==2.0.2
+[2023-06-16T05:09:10.520+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-06-16T05:09:10.545+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 211, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-06-16T05:09:10.554+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=demo_dag, task_id=executor_task, execution_date=20190601T160000, start_date=20230616T050859, end_date=20230616T050910
+[2023-06-16T05:09:10.635+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 14 for task executor_task (Bash command failed. The command returned a non-zero exit code 1.; 6213)
+[2023-06-16T05:09:10.664+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-16T05:09:10.715+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

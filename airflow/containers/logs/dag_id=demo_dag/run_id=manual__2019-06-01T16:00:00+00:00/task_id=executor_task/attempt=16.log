@@ -1,0 +1,34 @@
+[2023-06-16T21:24:32.706+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: demo_dag.executor_task manual__2019-06-01T16:00:00+00:00 [queued]>
+[2023-06-16T21:24:32.738+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: demo_dag.executor_task manual__2019-06-01T16:00:00+00:00 [queued]>
+[2023-06-16T21:24:32.739+0000] {taskinstance.py:1308} INFO - Starting attempt 16 of 19
+[2023-06-16T21:24:32.782+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): executor_task> on 2019-06-01 16:00:00+00:00
+[2023-06-16T21:24:32.789+0000] {standard_task_runner.py:57} INFO - Started process 701 to run task
+[2023-06-16T21:24:32.792+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'demo_dag', 'executor_task', 'manual__2019-06-01T16:00:00+00:00', '--job-id', '96', '--raw', '--subdir', 'DAGS_FOLDER/demo_dag.py', '--cfg-path', '/tmp/tmpfzwodmnx']
+[2023-06-16T21:24:32.795+0000] {standard_task_runner.py:85} INFO - Job 96: Subtask executor_task
+[2023-06-16T21:24:32.870+0000] {task_command.py:410} INFO - Running <TaskInstance: demo_dag.executor_task manual__2019-06-01T16:00:00+00:00 [running]> on host 03b5ffc5bbd5
+[2023-06-16T21:24:32.972+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:205: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-16T21:24:33.038+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='personaltraingcp@gmail.com' AIRFLOW_CTX_DAG_OWNER='Leyner_Bejarano' AIRFLOW_CTX_DAG_ID='demo_dag' AIRFLOW_CTX_TASK_ID='executor_task' AIRFLOW_CTX_EXECUTION_DATE='2019-06-01T16:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='16' AIRFLOW_CTX_DAG_RUN_ID='manual__2019-06-01T16:00:00+00:00'
+[2023-06-16T21:24:33.040+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-16T21:24:33.041+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', ' \n        cd /opt/***/dags/scripts &&\n        pip install -r requirements.txt &&\n        python lambdaExecutor.py -dt 2019-06-01 -dh 16 -q https://sqs.us-east-2.amazonaws.com/147929168898/lokaInterviewSQS -ak AKIASE4KD7QBGVHE4G7U -sk AKIASE4KD7QBGVHE4G7U &&\n        pip freeze\n        ']
+[2023-06-16T21:24:33.054+0000] {subprocess.py:86} INFO - Output:
+[2023-06-16T21:24:34.707+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-06-16T21:24:35.924+0000] {subprocess.py:93} INFO - Requirement already satisfied: boto3==1.26.151 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.26.151)
+[2023-06-16T21:24:36.005+0000] {subprocess.py:93} INFO - Requirement already satisfied: botocore<1.30.0,>=1.29.151 in /home/***/.local/lib/python3.7/site-packages (from boto3==1.26.151->-r requirements.txt (line 1)) (1.29.151)
+[2023-06-16T21:24:36.006+0000] {subprocess.py:93} INFO - Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in /home/***/.local/lib/python3.7/site-packages (from boto3==1.26.151->-r requirements.txt (line 1)) (0.10.0)
+[2023-06-16T21:24:36.007+0000] {subprocess.py:93} INFO - Requirement already satisfied: s3transfer<0.7.0,>=0.6.0 in /home/***/.local/lib/python3.7/site-packages (from boto3==1.26.151->-r requirements.txt (line 1)) (0.6.1)
+[2023-06-16T21:24:36.033+0000] {subprocess.py:93} INFO - Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /home/***/.local/lib/python3.7/site-packages (from botocore<1.30.0,>=1.29.151->boto3==1.26.151->-r requirements.txt (line 1)) (2.8.2)
+[2023-06-16T21:24:36.034+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<1.27,>=1.25.4 in /home/***/.local/lib/python3.7/site-packages (from botocore<1.30.0,>=1.29.151->boto3==1.26.151->-r requirements.txt (line 1)) (1.26.16)
+[2023-06-16T21:24:36.127+0000] {subprocess.py:93} INFO - Requirement already satisfied: six>=1.5 in /home/***/.local/lib/python3.7/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.30.0,>=1.29.151->boto3==1.26.151->-r requirements.txt (line 1)) (1.16.0)
+[2023-06-16T21:25:01.470+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-06-16T21:25:01.486+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 211, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-06-16T21:25:01.491+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=demo_dag, task_id=executor_task, execution_date=20190601T160000, start_date=20230616T212432, end_date=20230616T212501
+[2023-06-16T21:25:01.585+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 96 for task executor_task (Bash command failed. The command returned a non-zero exit code 1.; 701)
+[2023-06-16T21:25:01.602+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-16T21:25:01.676+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

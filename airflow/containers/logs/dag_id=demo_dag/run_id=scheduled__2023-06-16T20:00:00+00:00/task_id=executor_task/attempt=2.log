@@ -1,0 +1,37 @@
+[2023-06-16T21:11:25.628+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: demo_dag.executor_task scheduled__2023-06-16T20:00:00+00:00 [queued]>
+[2023-06-16T21:11:25.727+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: demo_dag.executor_task scheduled__2023-06-16T20:00:00+00:00 [queued]>
+[2023-06-16T21:11:25.728+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 4
+[2023-06-16T21:11:25.827+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): executor_task> on 2023-06-16 20:00:00+00:00
+[2023-06-16T21:11:25.834+0000] {standard_task_runner.py:57} INFO - Started process 463 to run task
+[2023-06-16T21:11:25.837+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'demo_dag', 'executor_task', 'scheduled__2023-06-16T20:00:00+00:00', '--job-id', '93', '--raw', '--subdir', 'DAGS_FOLDER/demo_dag.py', '--cfg-path', '/tmp/tmp69db0sos']
+[2023-06-16T21:11:25.839+0000] {standard_task_runner.py:85} INFO - Job 93: Subtask executor_task
+[2023-06-16T21:11:25.948+0000] {task_command.py:410} INFO - Running <TaskInstance: demo_dag.executor_task scheduled__2023-06-16T20:00:00+00:00 [running]> on host 03b5ffc5bbd5
+[2023-06-16T21:11:26.155+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:205: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-16T21:11:26.243+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='personaltraingcp@gmail.com' AIRFLOW_CTX_DAG_OWNER='Leyner_Bejarano' AIRFLOW_CTX_DAG_ID='demo_dag' AIRFLOW_CTX_TASK_ID='executor_task' AIRFLOW_CTX_EXECUTION_DATE='2023-06-16T20:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-06-16T20:00:00+00:00'
+[2023-06-16T21:11:26.244+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-16T21:11:26.244+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', ' \n        cd /opt/***/dags/scripts &&\n        pip install -r requirements.txt &&\n        python lambdaExecutor.py -dt 2023-06-16 -dh 20 -q https://sqs.us-east-2.amazonaws.com/147929168898/lokaInterviewSQS -ak AKIASE4KD7QBGVHE4G7U -sk AKIASE4KD7QBGVHE4G7U &&\n        pip freeze\n        ']
+[2023-06-16T21:11:26.255+0000] {subprocess.py:86} INFO - Output:
+[2023-06-16T21:11:36.042+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-06-16T21:11:44.309+0000] {subprocess.py:93} INFO - Requirement already satisfied: boto3==1.26.151 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.26.151)
+[2023-06-16T21:11:44.310+0000] {subprocess.py:93} INFO - Requirement already satisfied: botocore==1.29.151 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (1.29.151)
+[2023-06-16T21:11:44.312+0000] {subprocess.py:93} INFO - Requirement already satisfied: fastavro==1.7.4 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (1.7.4)
+[2023-06-16T21:11:44.314+0000] {subprocess.py:93} INFO - Requirement already satisfied: python-dateutil==2.8.2 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (2.8.2)
+[2023-06-16T21:11:44.316+0000] {subprocess.py:93} INFO - Requirement already satisfied: pytz==2023.3 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (2023.3)
+[2023-06-16T21:11:44.318+0000] {subprocess.py:93} INFO - Requirement already satisfied: s3transfer==0.6.1 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.6.1)
+[2023-06-16T21:11:44.320+0000] {subprocess.py:93} INFO - Requirement already satisfied: six==1.16.0 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (1.16.0)
+[2023-06-16T21:11:44.321+0000] {subprocess.py:93} INFO - Requirement already satisfied: tzdata==2023.3 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (2023.3)
+[2023-06-16T21:11:44.323+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3==1.26.16 in /home/***/.local/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.26.16)
+[2023-06-16T21:11:44.437+0000] {subprocess.py:93} INFO - Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in /home/***/.local/lib/python3.7/site-packages (from boto3==1.26.151->-r requirements.txt (line 1)) (0.10.0)
+[2023-06-16T21:12:44.212+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-06-16T21:12:44.223+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 211, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-06-16T21:12:44.251+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=demo_dag, task_id=executor_task, execution_date=20230616T200000, start_date=20230616T211125, end_date=20230616T211244
+[2023-06-16T21:12:44.336+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 93 for task executor_task (Bash command failed. The command returned a non-zero exit code 1.; 463)
+[2023-06-16T21:12:44.370+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-16T21:12:44.397+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check
